@@ -1,139 +1,105 @@
-// ===================== Dapur Ida Farida — Interactions =====================
-document.addEventListener('DOMContentLoaded', () => {
+/* =====================================================
+   DAPUR IDA FARIDA — script.js
+   ===================================================== */
 
-  /* ---- Loader ---- */
-  const loader = document.getElementById('loader');
-  window.addEventListener('load', () => {
-    setTimeout(() => loader.classList.add('hide'), 300);
-  });
+/* ===== NAVBAR: transparent → solid on scroll ===== */
+const navbar    = document.getElementById('navbar');
+const SCROLL_TH = 60;
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > SCROLL_TH);
+}, { passive: true });
 
-  /* ---- Footer year ---- */
-  document.getElementById('year').textContent = new Date().getFullYear();
+/* ===== HERO: subtle ken-burns effect ===== */
+window.addEventListener('load', () => {
+  document.querySelector('.hero').classList.add('ready');
+});
 
-  /* ---- Navbar scroll state ---- */
-  const navbar = document.getElementById('navbar');
-  const backToTop = document.getElementById('backToTop');
-  const onScroll = () => {
-    const scrolled = window.scrollY > 60;
-    navbar.classList.toggle('scrolled', scrolled);
-    backToTop.classList.toggle('show', window.scrollY > 480);
-  };
-  document.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+/* ===== HAMBURGER MENU ===== */
+const hamburger = document.getElementById('hamburger');
+const navMenu   = document.getElementById('navMenu');
 
-  /* ---- Mobile menu ---- */
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
-    });
-  });
+hamburger.addEventListener('click', () => {
+  const isOpen = navMenu.classList.toggle('open');
+  hamburger.classList.toggle('active', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
 
-  /* ---- Scroll reveal animations ---- */
-  const revealEls = document.querySelectorAll('[data-reveal]');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => revealObserver.observe(el));
-
-  /* ---- Active nav link highlight on scroll ---- */
-  const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navAnchors.forEach(a => {
-          a.classList.toggle('active-link', a.getAttribute('href') === `#${id}`);
-        });
-      }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  sections.forEach(sec => sectionObserver.observe(sec));
-
-  /* ---- Gallery lightbox ---- */
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxClose = document.getElementById('lightboxClose');
-
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const src = item.getAttribute('data-img');
-      const alt = item.querySelector('img').getAttribute('alt');
-      lightboxImg.setAttribute('src', src);
-      lightboxImg.setAttribute('alt', alt);
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  const closeLightbox = () => {
-    lightbox.classList.remove('active');
+/* Close mobile menu when a link is clicked */
+navMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('active');
     document.body.style.overflow = '';
-  };
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
   });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
+});
 
-  /* ---- Testimonial dots (mobile carousel sync) ---- */
-  const track = document.getElementById('testiTrack');
-  const dotsWrap = document.getElementById('testiDots');
-  const cards = track.querySelectorAll('.testi-card');
-
-  cards.forEach((_, i) => {
-    const dot = document.createElement('span');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => {
-      const card = cards[i];
-      track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+/* ===== FADE-IN ON SCROLL ===== */
+const fadeEls = document.querySelectorAll('[data-fade]');
+if (fadeEls.length) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
     });
-    dotsWrap.appendChild(dot);
-  });
-  const dots = dotsWrap.querySelectorAll('span');
+  }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+  fadeEls.forEach(el => io.observe(el));
+}
 
-  let scrollTimeout;
-  track.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      let closestIndex = 0;
-      let closestDistance = Infinity;
-      cards.forEach((card, i) => {
-        const distance = Math.abs(card.offsetLeft - track.offsetLeft - track.scrollLeft);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = i;
-        }
-      });
-      dots.forEach((d, i) => d.classList.toggle('active', i === closestIndex));
-    }, 100);
-  }, { passive: true });
+/* ===== GALLERY LIGHTBOX ===== */
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox     = document.getElementById('lightbox');
+const lbImg        = document.getElementById('lbImg');
+const lbClose      = document.getElementById('lbClose');
+const lbPrev       = document.getElementById('lbPrev');
+const lbNext       = document.getElementById('lbNext');
 
-  /* ---- Smooth anchor scroll offset for fixed navbar ---- */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId.length < 2) return;
-      const target = document.querySelector(targetId);
-      if (!target) return;
+const srcs = [...galleryItems].map(item => item.dataset.src);
+const alts = [...galleryItems].map(item => item.querySelector('img').alt);
+let   idx  = 0;
+
+function openLB(i) {
+  idx = (i + srcs.length) % srcs.length;
+  lbImg.src = srcs[idx];
+  lbImg.alt = alts[idx];
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLB() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+  lbImg.src = '';
+}
+
+galleryItems.forEach((item, i) => item.addEventListener('click', () => openLB(i)));
+lbClose.addEventListener('click', closeLB);
+lbPrev.addEventListener('click',  () => openLB(idx - 1));
+lbNext.addEventListener('click',  () => openLB(idx + 1));
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape')     closeLB();
+  if (e.key === 'ArrowLeft')  openLB(idx - 1);
+  if (e.key === 'ArrowRight') openLB(idx + 1);
+});
+
+/* Swipe support for lightbox on mobile */
+let touchStartX = 0;
+lightbox.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+lightbox.addEventListener('touchend',   e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) > 50) dx < 0 ? openLB(idx + 1) : openLB(idx - 1);
+}, { passive: true });
+
+/* ===== SMOOTH SCROLL (fallback for older browsers) ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
       e.preventDefault();
-      const offset = 78;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    });
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });

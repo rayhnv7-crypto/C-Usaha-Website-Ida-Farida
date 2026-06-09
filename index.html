@@ -1,293 +1,243 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dapur Ida Farida | Kuliner Nusantara Premium</title>
-<meta name="description" content="Dapur Ida Farida — Ayam Bakar, Ayam Goreng, dan Nasi Bakar otentik dengan cita rasa rumahan premium.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dapur Ida Farida | Ayam Bakar, Goreng &amp; Nasi Bakar</title>
+  <meta name="description" content="Dapur Ida Farida – ayam bakar, ayam goreng, dan nasi bakar rumahan autentik. Bumbu rempah segar, tanpa pengawet. Pesan via WhatsApp, siap antar!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Loader -->
-<div class="loader" id="loader"><div class="loader-ring"></div></div>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#beranda" class="logo">Dapur <strong>Ida Farida</strong></a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#beranda">Beranda</a>
+        <a href="#menu">Menu</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#galeri">Galeri</a>
+        <a href="https://wa.me/6285892017876?text=Halo%20Kak%2C%20saya%20ingin%20pesan%20menu%20Dapur%20Ida%20Farida%20%F0%9F%99%8F" class="btn-wa-nav" target="_blank" rel="noopener">Pesan Sekarang</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-<!-- Navbar -->
-<header class="navbar" id="navbar">
-  <div class="container nav-inner">
-    <a href="#hero" class="logo">Dapur <span>Ida Farida</span></a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#hero">Beranda</a>
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#menu">Menu Unggulan</a>
-      <a href="#galeri">Galeri</a>
-      <a href="#keunggulan">Keunggulan</a>
-      <a href="#testimoni">Testimoni</a>
-      <a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." class="btn-nav" target="_blank" rel="noopener">Pesan Sekarang</a>
-    </nav>
-    <button class="hamburger" id="hamburger" aria-label="Buka menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="beranda">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="hero-badge">🍳 Masakan Rumahan Autentik</span>
+      <h1 class="hero-title">Ayam Bakar, Goreng<br>&amp; Nasi Bakar Penuh Cinta</h1>
+      <p class="hero-desc">Dimasak dari resep keluarga Bu Ida Farida — bumbu rempah segar diracik sendiri setiap hari, tanpa pengawet, porsi mengenyangkan yang bikin kangen.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/6285892017876?text=Halo%20Kak%2C%20saya%20ingin%20pesan%20menu%20Dapur%20Ida%20Farida%20%F0%9F%99%8F" class="btn btn-wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16.04 2.67C8.84 2.67 3 8.5 3 15.7c0 2.5.69 4.84 1.89 6.85L3 29.33l6.97-1.83a12.9 12.9 0 0 0 6.07 1.54h.01c7.2 0 13.04-5.83 13.04-13.03 0-3.48-1.36-6.75-3.82-9.21a12.93 12.93 0 0 0-9.23-3.83Zm0 23.5h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4.13 1.08 1.1-4.03-.26-.41a10.74 10.74 0 0 1-1.65-5.77c0-5.96 4.85-10.81 10.83-10.81 2.9 0 5.62 1.13 7.66 3.18a10.74 10.74 0 0 1 3.17 7.65c0 5.97-4.85 10.85-10.81 10.85Zm5.94-8.12c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.32-.85 1.06-1.04 1.27-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.4-.3.32-1.14 1.12-1.14 2.73s1.17 3.17 1.33 3.39c.16.22 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.5.21 2.06.13.63-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.13-.3-.21-.62-.37Z"/></svg>
+          Pesan via WhatsApp
+        </a>
+        <a href="#menu" class="btn btn-outline-white">Lihat Menu ↓</a>
+      </div>
+    </div>
+  </section>
 
-<!-- Hero -->
-<section class="hero" id="hero">
-  <div class="hero-bg" style="background-image:url('assets/img/hero-bg.jpg')"></div>
-  <div class="hero-overlay"></div>
-  <div class="container hero-content" data-reveal>
-    <p class="hero-tagline">Cita Rasa Otentik &mdash; Sejak Hati Ke Piring</p>
-    <h1 class="hero-title">Kelezatan Kuliner Nusantara <span>dalam Setiap Suapan</span></h1>
-    <p class="hero-desc">Dapur Ida Farida menghadirkan Ayam Bakar, Ayam Goreng, dan Nasi Bakar dengan resep rumahan pilihan, bumbu rempah asli, dan sentuhan premium yang memanjakan lidah Anda.</p>
-    <div class="hero-actions">
-      <a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." class="btn btn-primary btn-whatsapp" target="_blank" rel="noopener">
-        <svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.04 2.67C8.84 2.67 3 8.5 3 15.7c0 2.5.69 4.84 1.89 6.85L3 29.33l6.97-1.83a12.9 12.9 0 0 0 6.07 1.54h.01c7.2 0 13.04-5.83 13.04-13.03 0-3.48-1.36-6.75-3.82-9.21a12.93 12.93 0 0 0-9.23-3.83Zm0 23.5h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4.13 1.08 1.1-4.03-.26-.41a10.74 10.74 0 0 1-1.65-5.77c0-5.96 4.85-10.81 10.83-10.81 2.9 0 5.62 1.13 7.66 3.18a10.74 10.74 0 0 1 3.17 7.65c0 5.97-4.85 10.85-10.81 10.85Zm5.94-8.12c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.32-.85 1.06-1.04 1.27-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.4-.3.32-1.14 1.12-1.14 2.73s1.17 3.17 1.33 3.39c.16.22 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.5.21 2.06.13.63-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.13-.3-.21-.62-.37Z"/></svg>
-        Pesan via WhatsApp
+  <!-- ===== MENU UNGGULAN ===== -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <div class="section-header" data-fade>
+        <span class="section-badge">Menu Unggulan</span>
+        <h2 class="section-title">Pilihan Terlezat Kami</h2>
+        <p class="section-desc">Setiap menu dibuat segar setiap hari dengan bumbu rempah pilihan dan resep rahasia keluarga.</p>
+      </div>
+      <div class="menu-grid">
+
+        <div class="menu-card" data-fade>
+          <div class="menu-img-wrap">
+            <img src="assets/img/menu-ayam-bakar.jpg" alt="Ayam Bakar bumbu rempah Dapur Ida Farida" loading="eager" width="480" height="360">
+            <span class="menu-badge-tag">Terlaris</span>
+          </div>
+          <div class="menu-body">
+            <h3>Ayam Bakar</h3>
+            <p>Ayam kampung pilihan dibakar di atas arang dengan bumbu rempah rahasia. Tersaji bersama sambal dan lalapan segar yang menggugah selera.</p>
+            <a href="https://wa.me/6285892017876?text=Halo%20Kak%2C%20saya%20mau%20pesan%20Ayam%20Bakar%20Dapur%20Ida%20Farida%20%F0%9F%99%8F" class="btn btn-order" target="_blank" rel="noopener">Pesan Sekarang</a>
+          </div>
+        </div>
+
+        <div class="menu-card" data-fade>
+          <div class="menu-img-wrap">
+            <img src="assets/img/menu-ayam-goreng.jpg" alt="Ayam Goreng crispy Dapur Ida Farida" loading="lazy" width="480" height="360">
+            <span class="menu-badge-tag">Favorit</span>
+          </div>
+          <div class="menu-body">
+            <h3>Ayam Goreng</h3>
+            <p>Crispy di luar, juicy di dalam. Digoreng dengan bawang putih dan rempah pilihan, ditaburi bawang goreng gurih yang wangi.</p>
+            <a href="https://wa.me/6285892017876?text=Halo%20Kak%2C%20saya%20mau%20pesan%20Ayam%20Goreng%20Dapur%20Ida%20Farida%20%F0%9F%99%8F" class="btn btn-order" target="_blank" rel="noopener">Pesan Sekarang</a>
+          </div>
+        </div>
+
+        <div class="menu-card" data-fade>
+          <div class="menu-img-wrap">
+            <img src="assets/img/menu-nasi-bakar.jpg" alt="Nasi Bakar ayam kemangi Dapur Ida Farida" loading="lazy" width="480" height="360">
+            <span class="menu-badge-tag">Spesial</span>
+          </div>
+          <div class="menu-body">
+            <h3>Nasi Bakar</h3>
+            <p>Nasi pulen isi ayam suwir kemangi dibungkus daun pisang, dibakar hingga harum sempurna. Aroma daun pisangnya bikin nagih!</p>
+            <a href="https://wa.me/6285892017876?text=Halo%20Kak%2C%20saya%20mau%20pesan%20Nasi%20Bakar%20Dapur%20Ida%20Farida%20%F0%9F%99%8F" class="btn btn-order" target="_blank" rel="noopener">Pesan Sekarang</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TENTANG KAMI ===== -->
+  <section class="about section" id="tentang">
+    <div class="container about-grid">
+      <div class="about-text" data-fade>
+        <span class="section-badge">Tentang Kami</span>
+        <h2 class="section-title">Masakan dari Hati,<br>Resep Turun-Temurun</h2>
+        <p>Dapur Ida Farida bermula dari dapur rumah kami yang sederhana. Bu Ida Farida, sang ahli masak keluarga, memutuskan untuk berbagi kelezatan masakannya kepada lebih banyak orang.</p>
+        <p>Setiap hidangan menggunakan bumbu yang diracik sendiri setiap hari — tanpa bumbu kemasan, tanpa jalan pintas. Dari pemilihan bahan segar, proses memasak, hingga penyajian, semua dilakukan dengan tangan dan sepenuh hati.</p>
+        <ul class="about-usp">
+          <li>
+            <span class="usp-icon">🌿</span>
+            <div>
+              <strong>Bumbu Segar Setiap Hari</strong>
+              <span>Rempah diracik sendiri, tidak menggunakan bumbu instan</span>
+            </div>
+          </li>
+          <li>
+            <span class="usp-icon">❤️</span>
+            <div>
+              <strong>Tanpa Pengawet, Aman untuk Keluarga</strong>
+              <span>Cocok untuk anak-anak hingga orang tua</span>
+            </div>
+          </li>
+          <li>
+            <span class="usp-icon">📦</span>
+            <div>
+              <strong>Pesan &amp; Siap Dikirim</strong>
+              <span>Chat WhatsApp kapan saja, kami siapkan pesanan Anda</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="about-photos" data-fade>
+        <img src="assets/img/about-1.jpg" alt="Suasana nyaman tempat makan" class="about-photo-main" loading="lazy" width="520" height="380">
+        <img src="assets/img/about-2.jpg" alt="Interior resto tradisional Jawa" class="about-photo-sub" loading="lazy" width="300" height="220">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERI ===== -->
+  <section class="gallery section" id="galeri">
+    <div class="container">
+      <div class="section-header" data-fade>
+        <span class="section-badge">Galeri</span>
+        <h2 class="section-title">Sekilas dari Dapur Kami</h2>
+        <p class="section-desc">Foto-foto asli dari berbagai hidangan dan suasana Dapur Ida Farida.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-src="assets/img/gallery-1.jpg" data-fade>
+          <img src="assets/img/gallery-1.jpg" alt="Ayam Bakar Madu" loading="lazy" width="400" height="400">
+          <div class="gallery-overlay"><span>⊕</span></div>
+        </div>
+        <div class="gallery-item" data-src="assets/img/gallery-2.jpg" data-fade>
+          <img src="assets/img/gallery-2.jpg" alt="Ayam Kampung Goreng" loading="lazy" width="400" height="400">
+          <div class="gallery-overlay"><span>⊕</span></div>
+        </div>
+        <div class="gallery-item" data-src="assets/img/gallery-3.jpg" data-fade>
+          <img src="assets/img/gallery-3.jpg" alt="Nasi Bakar Ayam Kemangi" loading="lazy" width="400" height="400">
+          <div class="gallery-overlay"><span>⊕</span></div>
+        </div>
+        <div class="gallery-item" data-src="assets/img/gallery-4.jpg" data-fade>
+          <img src="assets/img/gallery-4.jpg" alt="Nasi Goreng Spesial" loading="lazy" width="400" height="400">
+          <div class="gallery-overlay"><span>⊕</span></div>
+        </div>
+        <div class="gallery-item" data-src="assets/img/gallery-5.jpg" data-fade>
+          <img src="assets/img/gallery-5.jpg" alt="Ayam Taliwang" loading="lazy" width="400" height="400">
+          <div class="gallery-overlay"><span>⊕</span></div>
+        </div>
+        <div class="gallery-item" data-src="assets/img/gallery-6.jpg" data-fade>
+          <img src="assets/img/gallery-6.jpg" alt="Suasana warung hidangan Indonesia" loading="lazy" width="400" height="400">
+          <div class="gallery-overlay"><span>⊕</span></div>
+        </div>
+        <div class="gallery-item" data-src="assets/img/gallery-7.jpg" data-fade>
+          <img src="assets/img/gallery-7.jpg" alt="Suasana lesehan outdoor" loading="lazy" width="400" height="400">
+          <div class="gallery-overlay"><span>⊕</span></div>
+        </div>
+        <div class="gallery-item" data-src="assets/img/gallery-8.jpg" data-fade>
+          <img src="assets/img/gallery-8.jpg" alt="Ayam Bakar bumbu merah dengan sambal" loading="lazy" width="400" height="400">
+          <div class="gallery-overlay"><span>⊕</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA WHATSAPP ===== -->
+  <section class="cta" id="pesan">
+    <div class="container cta-inner" data-fade>
+      <h2>Mau Pesan Sekarang?</h2>
+      <p>Chat langsung dengan kami via WhatsApp. Kami siap membantu pilihkan menu terbaik untuk Anda dan keluarga tercinta.</p>
+      <a href="https://wa.me/6285892017876?text=Halo%20Kak%2C%20saya%20ingin%20pesan%20menu%20Dapur%20Ida%20Farida%20%F0%9F%99%8F" class="btn btn-wa-large" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M16.04 2.67C8.84 2.67 3 8.5 3 15.7c0 2.5.69 4.84 1.89 6.85L3 29.33l6.97-1.83a12.9 12.9 0 0 0 6.07 1.54h.01c7.2 0 13.04-5.83 13.04-13.03 0-3.48-1.36-6.75-3.82-9.21a12.93 12.93 0 0 0-9.23-3.83Zm0 23.5h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4.13 1.08 1.1-4.03-.26-.41a10.74 10.74 0 0 1-1.65-5.77c0-5.96 4.85-10.81 10.83-10.81 2.9 0 5.62 1.13 7.66 3.18a10.74 10.74 0 0 1 3.17 7.65c0 5.97-4.85 10.85-10.81 10.85Zm5.94-8.12c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.32-.85 1.06-1.04 1.27-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.4-.3.32-1.14 1.12-1.14 2.73s1.17 3.17 1.33 3.39c.16.22 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.5.21 2.06.13.63-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.13-.3-.21-.62-.37Z"/></svg>
+        Chat WhatsApp Sekarang
       </a>
-      <a href="#menu" class="btn btn-outline">Lihat Menu Unggulan</a>
+      <p class="cta-phone">📞 0858-9201-7876</p>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><strong>15+</strong><span>Tahun Pengalaman</span></div>
-      <div class="hero-stat"><strong>100%</strong><span>Bahan Segar Setiap Hari</span></div>
-      <div class="hero-stat"><strong>1000+</strong><span>Pelanggan Puas</span></div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Dapur <strong>Ida Farida</strong></p>
+        <p class="footer-tagline">Masakan rumahan autentik dengan cinta dan bumbu rempah pilihan.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Menu Cepat</h4>
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#menu">Menu Unggulan</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Hubungi Kami</h4>
+        <p>📱 0858-9201-7876</p>
+        <p>💬 Tersedia via WhatsApp</p>
+        <a href="https://wa.me/6285892017876?text=Halo%20Kak%2C%20saya%20ingin%20pesan%20menu%20Dapur%20Ida%20Farida%20%F0%9F%99%8F" class="btn-footer-wa" target="_blank" rel="noopener">
+          Pesan via WhatsApp
+        </a>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dapur Ida Farida. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING WA ===== -->
+  <a href="https://wa.me/6285892017876?text=Halo%20Kak%2C%20saya%20ingin%20pesan%20menu%20Dapur%20Ida%20Farida%20%F0%9F%99%8F" class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16.04 2.67C8.84 2.67 3 8.5 3 15.7c0 2.5.69 4.84 1.89 6.85L3 29.33l6.97-1.83a12.9 12.9 0 0 0 6.07 1.54h.01c7.2 0 13.04-5.83 13.04-13.03 0-3.48-1.36-6.75-3.82-9.21a12.93 12.93 0 0 0-9.23-3.83Zm0 23.5h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4.13 1.08 1.1-4.03-.26-.41a10.74 10.74 0 0 1-1.65-5.77c0-5.96 4.85-10.81 10.83-10.81 2.9 0 5.62 1.13 7.66 3.18a10.74 10.74 0 0 1 3.17 7.65c0 5.97-4.85 10.85-10.81 10.85Zm5.94-8.12c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.32-.85 1.06-1.04 1.27-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.4-.3.32-1.14 1.12-1.14 2.73s1.17 3.17 1.33 3.39c.16.22 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.5.21 2.06.13.63-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.13-.3-.21-.62-.37Z"/></svg>
+  </a>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Tampilan foto">
+    <button class="lb-close" id="lbClose" aria-label="Tutup">&times;</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Foto sebelumnya">&#8249;</button>
+    <div class="lb-img-wrap">
+      <img src="" alt="" id="lbImg">
+    </div>
+    <button class="lb-next" id="lbNext" aria-label="Foto berikutnya">&#8250;</button>
   </div>
-  <a href="#tentang" class="scroll-down" aria-label="Gulir ke bawah"><span></span></a>
-</section>
 
-<!-- Tentang Kami -->
-<section class="about" id="tentang">
-  <div class="container about-grid">
-    <div class="about-images" data-reveal>
-      <img src="assets/img/about-1.jpg" alt="Suasana hangat tempat makan tradisional Dapur Ida Farida" class="about-img-main">
-      <img src="assets/img/about-2.jpg" alt="Hidangan khas Dapur Ida Farida tersaji di meja kayu" class="about-img-sub">
-      <div class="about-badge">
-        <strong>15+</strong>
-        <span>Tahun Pengalaman Meracik Cita Rasa</span>
-      </div>
-    </div>
-    <div class="about-content" data-reveal>
-      <p class="section-tagline">Tentang Kami</p>
-      <h2 class="section-title">Dari Dapur Keluarga, Untuk Setiap Momen Istimewa Anda</h2>
-      <p class="section-text">
-        Dapur Ida Farida lahir dari kecintaan pada masakan rumahan Nusantara. Berbekal resep keluarga turun-temurun
-        dan bumbu rempah pilihan, setiap hidangan kami diolah dengan penuh perhatian &mdash; mulai dari proses
-        marinasi, pembakaran di atas bara, hingga penyajian yang menggugah selera.
-      </p>
-      <p class="section-text">
-        Kami percaya bahwa makanan terbaik lahir dari hati yang tulus. Itulah mengapa setiap porsi Ayam Bakar,
-        Ayam Goreng, dan Nasi Bakar yang kami sajikan selalu dibuat segar setiap hari, demi menghadirkan
-        pengalaman bersantap premium yang hangat dan berkesan.
-      </p>
-      <ul class="about-points">
-        <li><span>✓</span> Bumbu rempah asli racikan sendiri</li>
-        <li><span>✓</span> Bahan segar dipilih setiap hari</li>
-        <li><span>✓</span> Diolah dengan resep rumahan otentik</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Menu Unggulan -->
-<section class="menu" id="menu">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="section-tagline center">Menu Unggulan</p>
-      <h2 class="section-title center">Hidangan Favorit Pelanggan Kami</h2>
-      <p class="section-text center">Tiga sajian andalan yang menjadi alasan pelanggan selalu kembali ke Dapur Ida Farida.</p>
-    </div>
-    <div class="menu-grid">
-      <article class="menu-card" data-reveal>
-        <div class="menu-img">
-          <img src="assets/img/menu-ayam-bakar.jpg" alt="Ayam Bakar madu mengilap dengan glasir karamel khas Dapur Ida Farida">
-          <span class="menu-badge">Best Seller</span>
-        </div>
-        <div class="menu-body">
-          <h3>Ayam Bakar</h3>
-          <p>Ayam pilihan dimarinasi bumbu rempah khas, dibakar sempurna di atas bara hingga harum dan berbalut sambal istimewa.</p>
-          <div class="menu-foot">
-            <span class="menu-price">Rp 28.000</span>
-            <a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." class="menu-link" target="_blank" rel="noopener">Pesan via WA <i>&rarr;</i></a>
-          </div>
-        </div>
-      </article>
-
-      <article class="menu-card" data-reveal>
-        <div class="menu-img">
-          <img src="assets/img/menu-ayam-goreng.jpg" alt="Ayam Goreng renyah keemasan disajikan hangat bersama sambal segar">
-          <span class="menu-badge">Favorit</span>
-        </div>
-        <div class="menu-body">
-          <h3>Ayam Goreng</h3>
-          <p>Digoreng garing dengan racikan rempah meresap hingga ke tulang, disajikan hangat bersama lalapan dan sambal segar.</p>
-          <div class="menu-foot">
-            <span class="menu-price">Rp 25.000</span>
-            <a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." class="menu-link" target="_blank" rel="noopener">Pesan via WA <i>&rarr;</i></a>
-          </div>
-        </div>
-      </article>
-
-      <article class="menu-card" data-reveal>
-        <div class="menu-img">
-          <img src="assets/img/menu-nasi-bakar.jpg" alt="Nasi Bakar isi ayam suwir dengan aroma daun pisang khas Dapur Ida Farida">
-          <span class="menu-badge">Signature</span>
-        </div>
-        <div class="menu-body">
-          <h3>Nasi Bakar</h3>
-          <p>Nasi gurih berbumbu rempah, diisi ayam suwir pedas, dibungkus daun pisang dan dibakar hingga aromanya semerbak.</p>
-          <div class="menu-foot">
-            <span class="menu-price">Rp 22.000</span>
-            <a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." class="menu-link" target="_blank" rel="noopener">Pesan via WA <i>&rarr;</i></a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Galeri -->
-<section class="gallery" id="galeri">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="section-tagline center">Galeri</p>
-      <h2 class="section-title center">Sekilas Kelezatan dari Dapur Kami</h2>
-      <p class="section-text center">Sekilas momen dan sajian terbaik Dapur Ida Farida — klik gambar untuk memperbesar.</p>
-    </div>
-    <div class="gallery-grid gallery-grid-compact" data-reveal>
-      <div class="gallery-item" data-img="assets/img/gallery-1.jpg"><img src="assets/img/gallery-1.jpg" alt="Ayam Bakar Madu dengan saus karamel manis gurih" loading="lazy"></div>
-      <div class="gallery-item" data-img="assets/img/gallery-2.jpg"><img src="assets/img/gallery-2.jpg" alt="Ayam Taliwang dengan sambal khas dan jeruk limau" loading="lazy"></div>
-      <div class="gallery-item" data-img="assets/img/gallery-3.jpg"><img src="assets/img/gallery-3.jpg" alt="Ayam bakar disajikan modern bersama kentang goreng" loading="lazy"></div>
-      <div class="gallery-item" data-img="assets/img/gallery-5.jpg"><img src="assets/img/gallery-5.jpg" alt="Nasi bakar dibungkus daun pisang siap disantap" loading="lazy"></div>
-      <div class="gallery-item" data-img="assets/img/gallery-6.jpg"><img src="assets/img/gallery-6.jpg" alt="Ayam goreng renyah keemasan dengan sambal dan lalapan di atas daun pisang" loading="lazy"></div>
-      <div class="gallery-item" data-img="assets/img/gallery-9.jpg"><img src="assets/img/gallery-9.jpg" alt="Sajian ayam bakar lengkap dengan lalapan dan sambal terasi" loading="lazy"></div>
-    </div>
-    <div class="gallery-more" data-reveal>
-      <a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." class="btn btn-outline" target="_blank" rel="noopener">Lihat Galeri Lengkap via WhatsApp</a>
-    </div>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Tutup">&times;</button>
-  <img src="" alt="Pratinjau galeri" id="lightboxImg">
-</div>
-
-<!-- Keunggulan -->
-<section class="features" id="keunggulan">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="section-tagline center">Keunggulan</p>
-      <h2 class="section-title center">Mengapa Memilih Dapur Ida Farida</h2>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card" data-reveal>
-        <div class="feature-icon">🌿</div>
-        <h3>Bahan Segar Pilihan</h3>
-        <p>Setiap bahan dipilih dan diolah segar setiap hari untuk menjaga kualitas dan cita rasa terbaik.</p>
-      </div>
-      <div class="feature-card" data-reveal>
-        <div class="feature-icon">🔥</div>
-        <h3>Resep Otentik Rumahan</h3>
-        <p>Diracik dengan bumbu rempah asli dan resep keluarga turun-temurun yang khas dan konsisten.</p>
-      </div>
-      <div class="feature-card" data-reveal>
-        <div class="feature-icon">✨</div>
-        <h3>Higienis &amp; Berkualitas</h3>
-        <p>Proses memasak menjaga standar kebersihan tinggi demi kenyamanan dan kepuasan Anda.</p>
-      </div>
-      <div class="feature-card" data-reveal>
-        <div class="feature-icon">🛵</div>
-        <h3>Pemesanan Praktis &amp; Cepat</h3>
-        <p>Mudah dipesan untuk acara keluarga, kantor, hingga hajatan dengan layanan yang ramah dan cepat.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimoni -->
-<section class="testimonials" id="testimoni">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="section-tagline center">Testimoni</p>
-      <h2 class="section-title center">Apa Kata Mereka Tentang Kami</h2>
-    </div>
-    <div class="testi-track" id="testiTrack">
-      <div class="testi-card" data-reveal>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Ayam bakarnya juara! Bumbunya meresap sampai ke dalam dan aromanya bikin nagih. Selalu jadi pilihan untuk acara keluarga kami."</p>
-        <div class="testi-author"><span class="testi-avatar">RP</span><div><strong>Rini P.</strong><small>Pelanggan Setia</small></div></div>
-      </div>
-      <div class="testi-card" data-reveal>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Nasi bakarnya unik dan harum banget karena dibakar pakai daun pisang. Porsinya pas dan rasanya benar-benar otentik rumahan."</p>
-        <div class="testi-author"><span class="testi-avatar">DA</span><div><strong>Dimas A.</strong><small>Karyawan Kantor</small></div></div>
-      </div>
-      <div class="testi-card" data-reveal>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Ayam gorengnya renyah di luar tapi tetap juicy di dalam. Sambalnya pedas mantap, cocok banget buat makan siang keluarga."</p>
-        <div class="testi-author"><span class="testi-avatar">SN</span><div><strong>Siti N.</strong><small>Ibu Rumah Tangga</small></div></div>
-      </div>
-      <div class="testi-card" data-reveal>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Sering pesan untuk acara kantor, rasanya konsisten enak dan pengirimannya selalu tepat waktu. Sangat direkomendasikan!"</p>
-        <div class="testi-author"><span class="testi-avatar">BW</span><div><strong>Bayu W.</strong><small>Event Organizer</small></div></div>
-      </div>
-    </div>
-    <div class="testi-dots" id="testiDots"></div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-  <div class="container cta-inner" data-reveal>
-    <h2>Lapar? Saatnya Pesan Hidangan Favorit Anda</h2>
-    <p>Rasakan kelezatan Ayam Bakar, Ayam Goreng, dan Nasi Bakar khas Dapur Ida Farida — dipesan mudah, diantar cepat.</p>
-    <a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." class="btn btn-primary" target="_blank" rel="noopener">Pesan Sekarang via WhatsApp</a>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer" id="footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a href="#hero" class="logo">Dapur <span>Ida Farida</span></a>
-      <p>Menyajikan kelezatan kuliner Nusantara dengan resep rumahan otentik dan sentuhan premium, langsung dari hati ke meja makan Anda.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
-        <a href="#" aria-label="Facebook">FB</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Navigasi</h4>
-      <a href="#hero">Beranda</a>
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#menu">Menu Unggulan</a>
-      <a href="#galeri">Galeri</a>
-      <a href="#testimoni">Testimoni</a>
-    </div>
-    <div class="footer-col">
-      <h4>Hubungi Kami</h4>
-      <p>📍 Jl. Raya Kuliner No. 21, Indonesia</p>
-      <p>📞 <a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." class="footer-inline-link" target="_blank" rel="noopener">0858-9201-7876 (WhatsApp)</a></p>
-      <p>✉️ halo@dapuridafarida.id</p>
-      <p>🕐 Setiap Hari, 08.00 — 21.00</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; <span id="year"></span> Dapur Ida Farida. Seluruh hak cipta dilindungi.</p>
-  </div>
-</footer>
-
-<a href="https://wa.me/6285892017876?text=Halo%20Om%20Hery%2C%20saya%20melihat%20website%20Anda%20dan%20ingin%20bertanya%20mengenai%20menu%20yang%20tersedia." class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
-  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.04 2.67C8.84 2.67 3 8.5 3 15.7c0 2.5.69 4.84 1.89 6.85L3 29.33l6.97-1.83a12.9 12.9 0 0 0 6.07 1.54h.01c7.2 0 13.04-5.83 13.04-13.03 0-3.48-1.36-6.75-3.82-9.21a12.93 12.93 0 0 0-9.23-3.83Zm0 23.5h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4.13 1.08 1.1-4.03-.26-.41a10.74 10.74 0 0 1-1.65-5.77c0-5.96 4.85-10.81 10.83-10.81 2.9 0 5.62 1.13 7.66 3.18a10.74 10.74 0 0 1 3.17 7.65c0 5.97-4.85 10.85-10.81 10.85Zm5.94-8.12c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.32-.85 1.06-1.04 1.27-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.4-.3.32-1.14 1.12-1.14 2.73s1.17 3.17 1.33 3.39c.16.22 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.5.21 2.06.13.63-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.13-.3-.21-.62-.37Z"/></svg>
-</a>
-
-<a href="#hero" class="back-to-top" id="backToTop" aria-label="Kembali ke atas">&uarr;</a>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
